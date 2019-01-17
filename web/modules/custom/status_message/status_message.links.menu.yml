@@ -1,0 +1,13 @@
+status_message.admin_config:
+ title: 'Status message'
+ parent: system.admin_config_system
+ route_name: status_message.admin_config
+ description: 'Configure Status messages.'
+ weight: 100
+
+
+modal_window.admin_settings:
+ title: 'Modal window'
+ description: 'In this settings you can set width, height and background for modal window of status message.'
+ parent: status_message.admin_config
+ route_name: modal_window.admin_settings

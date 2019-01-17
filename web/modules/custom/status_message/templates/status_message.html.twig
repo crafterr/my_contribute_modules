@@ -1,0 +1,17 @@
+{% extends "@classy/misc/status-messages.html.twig" %}
+{% block messages %}
+    {% if message_list is not empty %}
+        {{ attach_library('bartik/messages') }}
+        <div class="messages__wrapper layout-container" id="m_overlay">
+            <div id="modal_window">
+                <div id="modal_title" class="modal_title">
+                    <p class="modal_title">Status messages</p>
+                </div>
+                {{ parent() }}
+                <button class="btn-close" id="modal_close" type="button" aria-label="close">
+                    &times;
+                </button>
+            </div>
+        </div>
+    {% endif %}
+{% endblock messages %}

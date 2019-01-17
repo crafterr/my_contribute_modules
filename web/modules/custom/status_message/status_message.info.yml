@@ -1,0 +1,7 @@
+name: 'Status message'
+type: module
+description: 'Module for changing status messages'
+core: 8.x
+package: 'Custom'
+
+configure: modal_window.admin_settings

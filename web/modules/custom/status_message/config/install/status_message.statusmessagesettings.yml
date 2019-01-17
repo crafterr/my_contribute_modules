@@ -1,0 +1,4 @@
+status_message:
+  width: 800
+  height: 50
+  background: "#efefef"

@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains status_message.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function status_message_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the status_message module.
+    case 'help.page.status_message':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module for changing status messages') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function status_message_theme() {
+  return [
+    'status_message' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function status_message_page_attachments(array &$attachments) {
+  $config = \Drupal::config('status_message.settings');
+  //add library from status_message.libraries.yml to html
+  $attachments['#attached']['library'][] = 'status_message/modal_window';
+
+  $attachments['#attached']['drupalSettings']['statusMessage']['modalWindow']['width'] = $config->get('width');
+  $attachments['#attached']['drupalSettings']['statusMessage']['modalWindow']['height'] = $config->get('height');
+  $attachments['#attached']['drupalSettings']['statusMessage']['modalWindow']['background'] = $config->get('background');
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function status_message_theme_registry_alter(&$theme_registry) {
+
+  $theme_registry['status_messages']['theme paths'] = array(0 => drupal_get_path('module', 'status_message') . '/templates');
+  $theme_registry['status_messages']['theme path'] = drupal_get_path('module', 'status_message') . '/templates';
+  $theme_registry['status_messages']['path'] = drupal_get_path('module', 'status_message') . '/templates';
+  // tell the theme system to use 'status_message.html.twig' as the template file. Note that you do not include 'html.twig'
+  $theme_registry['status_messages']['template'] = 'status_message';
+  // for check big message dpm($theme_registry)
+}
