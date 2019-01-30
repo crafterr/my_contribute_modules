@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ajax_load_entity.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ajax_load_entity_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ajax_load_entity module.
+    case 'help.page.ajax_load_entity':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,5 @@
+name: 'Create Node Block'
+type: module
+description: 'Module to create a node by block'
+core: 8.x
+package: 'Custom'

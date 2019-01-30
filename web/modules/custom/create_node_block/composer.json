@@ -1,0 +1,14 @@
+{
+  "name": "drupal/create_node_block",
+  "type": "drupal-module",
+  "description": "Module to create a node by block",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/create_node_block",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/create_node_block",
+    "source": "http://cgit.drupalcode.org/create_node_block"
+  },
+  "require": { }
+}

@@ -1,0 +1,4 @@
+services:
+  article.service:
+    class: Drupal\create_node_block\ArticleService
+    arguments: ['@entity_type.manager']

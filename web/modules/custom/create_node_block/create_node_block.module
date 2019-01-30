@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains create_node_block.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function create_node_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the create_node_block module.
+    case 'help.page.create_node_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module to create a node by block') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function create_node_block_theme() {
+  return [
+    'create_node_block' => [
+        'variables' => [
+          'title' => '',
+          'node' => NULL,
+      ],
+      'template' => 'create-node-block'
+    ],
+
+  ];
+}

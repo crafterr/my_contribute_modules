@@ -1,0 +1,11 @@
+ajax_load_entity.load_entity:
+  path: '/ajax_load_entity/{method}/{entity_type}/{entity}/{view_mode}'
+  defaults:
+    _controller: '\Drupal\ajax_load_entity\Controller\AjaxLoadEntityController::getEntity'
+  requirements:
+    _permission: 'access content'
+    method: 'nojs|ajax'
+  options:
+    parameters:
+      entity:
+        type: entity:{entity_type}
