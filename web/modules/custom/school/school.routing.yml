@@ -1,0 +1,33 @@
+school.add:
+  path: '/school/add'
+  defaults:
+    _controller: '\Drupal\node\Controller\NodeController::add'
+    _title: 'Add School'
+    node_type: 'school'
+  requirements:
+    _node_add_access: 'node:school'
+
+school.add-new-school:
+  path: '/school/add-add-new-school'
+  defaults:
+    _controller: '\Drupal\school\Controller\SchoolController::add'
+    _title: 'Add School'
+    node_type: 'school'
+  requirements:
+    _node_add_access: 'node:school'
+
+school.edit:
+  path: '/school/{node}/edit'
+  defaults:
+    _entity_form: 'node.edit'
+  requirements:
+    node: \d+
+    _entity_access: 'node.update'
+
+school.view:
+  path: '/school/{node}'
+  defaults:
+    _controller: '\Drupal\node\Controller\NodeViewController::view'
+  requirements:
+    node: \d+
+    _entity_access: 'node.view'
